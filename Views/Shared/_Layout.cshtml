@@ -25,6 +25,20 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @if(User.IsInRole("Admin"))
+                        {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" href="#" aria-expanded="false" data-bs-toggle="dropdown">Catálogo</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Categorias" asp-action="Index">Categorias</a>
+                                </li>
+                                  <li>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Productos" asp-action="Index">Productos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
