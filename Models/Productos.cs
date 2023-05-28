@@ -16,4 +16,6 @@ public class Productos
     public int id_categoria { get; set; }
     [ForeignKey("id_categoria")]
     public Categorias? categoria { get; set; }
+    [Display(Name ="Imagen del Producto")]
+    public string? UrlImagen { get; set; }
 }
